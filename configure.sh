@@ -1,13 +1,13 @@
-
 echo "## Build HSTR on Ubuntu"
 # Clone repository
 git clone https://github.com/dvorka/hstr.git
 # Install dependencies
 sudo apt install automake gcc make libncursesw5-dev libreadline-dev
 # Create build files
-cd ./build/tarball && ./tarball-automake.sh && cd ../..
+cd hstr/build/tarball && ./tarball-automake.sh && cd ../..
 # Build and install HSTR
 ./configure && make && make install
+cd ..
 
 
 echo "## Copy DIRB repository"
@@ -23,5 +23,4 @@ cat bashrc >> ~/.bashrc
 
 
 echo "## Cleaning directory"
-rm -rf dirb/
-
+rm -rf dirb/ hstr/
