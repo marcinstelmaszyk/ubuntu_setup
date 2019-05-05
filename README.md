@@ -3,7 +3,7 @@ Setup for a newly installed Ubuntu
 
 
 
-### .bashrc
+### bashrc
 
 Add lines to configure [HSTR](https://github.com/dvorka/hstr/) and [DIRB](https://github.com/icyfork/dirb)
 
