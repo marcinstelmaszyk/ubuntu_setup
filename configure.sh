@@ -9,7 +9,7 @@ echo "## Copy DIRB executable to ~/.bashDirB"
 cp dirb/dirb.sh ~/.bashDirB
 
 echo "## Append commands to ~/.bashrc"
-cat .bashrc >> ~/.bashrc
+cat bashrc >> ~/.bashrc
 
 echo "## Cleaning directory"
 rm -rf dirb/
