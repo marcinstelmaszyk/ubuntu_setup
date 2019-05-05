@@ -2,7 +2,7 @@
 sudo apt update
 sudo apt install git
 
-## Add Git aliases ################################
+## Add aliases to Git's .gitconfig ##################
 found_entry=`(grep "\[alias\]" ~/.gitconfig | wc -c)`
 if [ $found_entry -eq 0 ]; then
     cat gitconfig >> ~/.gitconfig
