@@ -1,9 +1,14 @@
-# Install Git
+## Install Git #####
 sudo apt update
 sudo apt install git
 
+## Add Git aliases ################################
+found_entry=`(grep "[alias]" ~/.gitconfig | wc -c)`
+if [ $found_entry -eq 0 ]; then
+    cat gitconfig >> ~/.gitconfig
+fi
 
-echo "## Build HSTR on Ubuntu"
+## Build HSTR on Ubuntu ###########################################
 # Clone repository
 git clone https://github.com/dvorka/hstr.git
 # Install dependencies
@@ -14,22 +19,18 @@ cd hstr/build/tarball && ./tarball-automake.sh && cd ../..
 ./configure && make && make install
 cd ..
 
-
-echo "## Copy DIRB repository"
+## Copy DIRB repository #####################
 git clone https://github.com/icyfork/dirb.git
 
-
-echo "## Copy DIRB executable to ~/.bashDirB"
+## Copy DIRB executable to ~/.bashDirB ##
 cp dirb/dirb.sh ~/.bashDirB
 
-
-echo "## Append commands to ~/.bashrc"
+## Append commands to ~/.bashrc #############
 # Don't append if already done
 found_entry=`(grep "DIRB" ~/.bashrc | wc -c)`
 if [ $found_entry -eq 0 ]; then
     cat bashrc >> ~/.bashrc
 fi
 
-
-echo "## Cleaning directory"
+## Cleaning directory ##
 rm -rf dirb/ hstr/
