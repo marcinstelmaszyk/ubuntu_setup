@@ -1,3 +1,8 @@
+# Install Git
+sudo apt update
+sudo apt install git
+
+
 echo "## Build HSTR on Ubuntu"
 # Clone repository
 git clone https://github.com/dvorka/hstr.git
