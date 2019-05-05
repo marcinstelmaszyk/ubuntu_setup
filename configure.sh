@@ -19,7 +19,11 @@ cp dirb/dirb.sh ~/.bashDirB
 
 
 echo "## Append commands to ~/.bashrc"
-cat bashrc >> ~/.bashrc
+# Don't append if already done
+found_entry=`(grep "DIRB" ~/.bashrc | wc -c)`
+if [ $found_entry -eq 0 ]; then
+    cat bashrc >> ~/.bashrc
+fi
 
 
 echo "## Cleaning directory"
