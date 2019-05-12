@@ -2,9 +2,9 @@
 sudo apt update
 sudo apt install git
 
-## Add aliases to Git's .gitconfig ##################
-found_entry=`(grep "\[alias\]" ~/.gitconfig | wc -c)`
-if [ $found_entry -eq 0 ]; then
+## Add aliases stored in the file 'gitconfig' to Git's .gitconfig ########
+alias_section_present=`(grep "\[alias\]" ~/.gitconfig | wc -c)`
+if [ $alias_section_present -eq 0 ]; then
     cat gitconfig >> ~/.gitconfig
 fi
 
@@ -25,10 +25,10 @@ git clone https://github.com/icyfork/dirb.git
 ## Copy DIRB executable to ~/.bashDirB ##
 cp dirb/dirb.sh ~/.bashDirB
 
-## Append commands to ~/.bashrc #############
-# Don't append if already done
-found_entry=`(grep "DIRB" ~/.bashrc | wc -c)`
-if [ $found_entry -eq 0 ]; then
+## Append commands stored in the file 'bashrc' to ~/.bashrc ##
+## Don't append if already done
+DIRB_word_found=`(grep "DIRB" ~/.bashrc | wc -c)`
+if [ $DIRB_word_found -eq 0 ]; then
     cat bashrc >> ~/.bashrc
 fi
 
