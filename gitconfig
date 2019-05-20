@@ -3,3 +3,5 @@
     g = log --pretty=oneline --abbrev-commit --abbrev=5 -25 --graph
     s = status -sb
     b = branch
+[color]
+    ui = true
